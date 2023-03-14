@@ -46,7 +46,6 @@ const clear = () => {
 }
 document.getElementById('C').addEventListener('click', clear);
 
-
 /******************** Error handling **************************/
 const throwErr = () => {
     errDiv.classList.remove('d-none');
@@ -152,14 +151,14 @@ const getEvalExpression = (exp) => {
 
 /****************** Find answer *********************/
 const result = () => {
-    if (input.value !== '') {
-        try {
+    try {
+        if (input.value !== '') {
             let result = eval(getEvalExpression(input.value));
             output.value = parseInt(result) === result ? result : result.toFixed(2);
             input.value = "";
-        } catch (err) {
-            throwErr();
         }
+    } catch (err) {
+        throwErr();
     }
 }
 document.getElementById('=').addEventListener('click', result);
