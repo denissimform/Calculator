@@ -1,0 +1,76 @@
+@import url('./bootstrap.min.css');
+@import url('./bootstrap-icons.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.calculator-container {
+    width: 552px;
+    border: 1px solid whitesmoke;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.display {
+    margin: 5px;
+}
+
+.my-input {
+    height: 100px;
+    outline: none;
+    border: none;
+    background-color: whitesmoke;
+    font-size: xx-large;
+    text-align: end;
+}
+
+.my-output {
+    outline: none;
+    border: none;
+    font-size: larger;
+    background-color: whitesmoke;
+}
+
+.my-btn,
+.simple-btn {
+    width: 100px;
+    height: 60px;
+    border: none;
+    margin: 2px 0;
+}
+
+.my-btn {
+    background-color: #f4f5f5;
+}
+
+.my-btn:hover {
+    background-color: rgba(0, 0, 0, 0.548);
+    color: white;
+    box-shadow: none !important;
+}
+
+.simple-btn {
+    background-color: unset;
+}
+
+.my-bg-light {
+    background-color: #fcfdfc;
+}
+
+.my-select {
+    background-color: unset;
+    border: none;
+    outline: none;
+    padding-right: 5px;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.disabled-btn {
+    color: gray;
+    cursor: unset !important;
+}
+
+.equals-to-btn {
+    background-color: black;
+    color: white;
+}

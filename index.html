@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" name="Denis Shingala">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="col calculator-container shadow p-3 mt-5">
+        <div class="alert alert-dark text-center alert-dismissible fade show d-none" id="err-div" role="alert">
+            <strong>Please!</strong> Enter valid input!!
+            <button type="button" class="btn-close border-0 shadow-none" id="err-close-btn"></button>
+        </div>
+        <div class="row mb-0 display">
+            <input type="text" name="input" id="input" placeholder="0" class="my-input shadow">
+        </div>
+        <div class="row mt-0 display">
+            <input type="text" name="output" id="output" class="my-output shadow text-center" placeholder="Answer"
+                readonly>
+        </div>
+        <div class="row">
+            <!-- button.main-btn -->
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="simple-btn" id="MC">MC</button>
+                <button class="simple-btn" id="MR">MR</button>
+                <button class="simple-btn" id="M+">M+</button>
+                <button class="simple-btn" id="M-">M-</button>
+                <button class="simple-btn" id="MS">MS</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="dropdown d-inline">
+                    <img src="https://img.icons8.com/ios-glyphs/30/null/trigonometry.png" alt="icon" width="20"
+                        height="20" class="ms-4" />
+                    <button class="dropdown-toggle simple-btn" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Trigonometry
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item text-center main-btn" data-value="sin(" id="sin">sin</button>
+                        <button class="dropdown-item text-center main-btn" data-value="cos(" id="cos">cos</button>
+                        <button class="dropdown-item text-center main-btn" data-value="cosec(" id="cosec">cosec</button>
+                        <button class="dropdown-item text-center main-btn" data-value="sec(" id="sec">sec</button>
+                        <button class="dropdown-item text-center main-btn" data-value="tan(" id="tan">tan</button>
+                        <button class="dropdown-item text-center main-btn" data-value="cot(" id="cot">cot</button>
+                    </div>
+                </div>
+                <div class="dropdown d-inline ms-5">
+                    <span class="ms-4">&#x192;</span>
+                    <button class="dropdown-toggle simple-btn" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Function
+                    </button>
+                    <ul class="dropdown-menu">
+                        <button class="dropdown-item text-center main-btn" data-value="floor("
+                            id="cos">&LeftFloor;x&RightFloor;</button>
+                        <button class="dropdown-item text-center main-btn" data-value="ceil("
+                            id="cosec">&LeftCeiling;x&RightCeiling;</button>
+                        <button class="dropdown-item text-center" id="rand">Random</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow" data-value="2nd" id="2nd">2<sup>nd</sup></button>
+                <button class="my-btn shadow main-btn" data-value="π" id="pie">&pi;</button>
+                <button class="my-btn shadow main-btn" data-value="2.72">e</button>
+                <button class="my-btn shadow" data-value="C" id="C">C</button>
+                <button class="my-btn shadow" data-value="backspace" id="backspace"><i
+                        class="bi bi-backspace"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="^2">x<sup data-value="^2">2</sup></button>
+                <button class="my-btn shadow main-btn second-btn d-none" data-value="^3">x<sup data-value="^3">3</sup></button>
+                <button class="my-btn shadow main-btn" data-value="1/"><sup data-value="1/">1</sup>&frasl;<sub data-value="1/">x</sub></button>
+                <button class="my-btn shadow main-btn" data-value="abs(">|x|</button>
+                <button class="my-btn shadow" data-value=".e+" id="exp">exp</button>
+                <button class="my-btn shadow main-btn" data-value="%">mod</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="sqrt("><sup data-value="sqrt(">2</sup>&Sqrt;x</button>
+                <button class="my-btn shadow main-btn second-btn d-none" data-value="cqrt("><sup data-value="cqrt(">3</sup>&Sqrt;x</button>
+                <button class="my-btn shadow main-btn" data-value="(">(</button>
+                <button class="my-btn shadow main-btn" data-value=")">)</button>
+                <button class="my-btn shadow" id="fact">n!</button>
+                <button class="my-btn shadow main-btn" data-value="/">÷</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="^">x<sup data-value="^">y</sup></button>
+                <button class="my-btn shadow second-btn d-none" id="y-root-x"><sup>y</sup>&Sqrt;x</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="7">7</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="8">8</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="9">9</button>
+                <button class="my-btn shadow main-btn" data-value="*">&times;</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="10^">10<sup data-value="10^">x</sup></button>
+                <button class="my-btn shadow main-btn second-btn d-none" data-value="2^">2<sup data-value="2^">x</sup></button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="4">4</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="5">5</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="6">6</button>
+                <button class="my-btn shadow main-btn" data-value="-">-</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="log(">log</button>
+                <button class="my-btn shadow second-btn d-none" id="logyx">log<sub>y</sub>x</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="1">1</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="2">2</button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="3">3</button>
+                <button class="my-btn shadow main-btn" data-value="+">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="my-btn shadow main-btn first-btn" data-value="ln(">ln</button>
+                <button class="my-btn shadow main-btn second-btn d-none" data-value="exp(">e<sup data-value="e(">x</sup></button>
+                <button class="my-btn shadow" id="plus-minus"><i class="bi bi-plus-slash-minus"></i></button>
+                <button class="my-btn shadow main-btn fw-bolder my-bg-light" data-value="0">0</button>
+                <button class="my-btn shadow main-btn" data-value=".">.</button>
+                <button class="my-btn shadow equals-to-btn" id="="> =</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Js file -->
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/index.js"></script>
+</body>
+
+</html>
